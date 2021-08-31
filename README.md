@@ -54,7 +54,7 @@ node generate_csv_time_series.js average stats.csv
 ```sh
 node generate_csv_time_series.js plain stats.csv
 ```
-## Plot
+## Plotting Graphs
 
 No graph utility is provided with this code. 
 You can use a simple GDrive Spreadsheet to draw the graph
