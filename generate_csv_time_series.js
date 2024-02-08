@@ -39,12 +39,6 @@ fs.readdirSync(folder).forEach(file => {
                     if (value == null) {
                         var ops = index.accesses.ops;
                         var since = getSince(index);
-                        if (index.accesses.since.$date == null) {
-                            since = new Date(`${index.accesses.since.$date}`);
-                        } else {
-                            //old versions generates without
-                            since = new Date(`${index.accesses.since}`);
-                        }
                         var mins = (extractionDate - since.getTime()) / 1000 / 60; //per min
                         var timesPerMin = (ops / mins);
                         data[extractionDate][`${index.name}`] = timesPerMin;
@@ -58,7 +52,7 @@ fs.readdirSync(folder).forEach(file => {
                     }
                 } else {
                     var ops = index.accesses.ops;
-                    var since = getSince(index);
+                    
                     var mins = (extractionDate - since.getTime()) / 1000 / 60; //per min
                     var timesPerMin = (ops / mins);
                     data[extractionDate][`${replicaName}_${index.name}`] = timesPerMin;
