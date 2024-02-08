@@ -52,7 +52,7 @@ fs.readdirSync(folder).forEach(file => {
                     }
                 } else {
                     var ops = index.accesses.ops;
-                    
+                    var since = getSince(index);
                     var mins = (extractionDate - since.getTime()) / 1000 / 60; //per min
                     var timesPerMin = (ops / mins);
                     data[extractionDate][`${replicaName}_${index.name}`] = timesPerMin;
